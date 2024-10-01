@@ -1,0 +1,90 @@
+@import "https://unpkg.com/transition-style/transition.circles.min.css";
+/* Keyframes para el efecto de círculo */
+@keyframes circle-out-hesitate {
+  0% {
+    clip-path: circle(125%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(0%);
+  }
+}
+
+/* Aplicamos la animación */
+.background-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #bdbdbd;
+  z-index: 0; /* Detrás del contenido */
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-hesitate both;
+}
+
+/* Aseguramos que el contenido esté encima */
+.content-container {
+  position: relative;
+  z-index: 1; /* Encima del fondo animado */
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-right: 10px;
+    transition: 0.3s;
+    text-decoration: none ;
+    font-size: 20px;
+  }
+  .social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-right: 10px;
+    transition: 0.3s;
+    text-decoration: none ;
+    font-size: 32px;
+  }
+  
+  .social-links a:hover {
+    color: #0b5ed7;
+    border-color: var(--accent-color);
+  }
+  
+  /* Media Queries para ajuste de layout responsivo */
+  @media (max-width: 768px) {
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+   
+  }
+  @keyframes circle-out-hesitate {
+    0% {
+      clip-path: circle(125%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(0%);
+    }
+  }
+  
+  [transition-style="out:circle:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-hesitate both;
+  }
+
+ 

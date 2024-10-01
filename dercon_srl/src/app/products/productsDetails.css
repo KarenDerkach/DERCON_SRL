@@ -1,0 +1,303 @@
+/*--------------------------------------------------------------
+# products Section
+--------------------------------------------------------------*/
+.products .portfolio-filters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+  }
+  
+  .products .portfolio-filters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 10px;
+    line-height: 1;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .products .portfolio-filters li:hover,
+  .products .portfolio-filters li.filter-active {
+    color: var(--accent-color);
+  }
+  
+  .products .portfolio-filters li:first-child {
+    margin-left: 0;
+  }
+  
+  .products .portfolio-filters li:last-child {
+    margin-right: 0;
+  }
+  
+  @media (max-width: 575px) {
+    .products .portfolio-filters li {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+  }
+  
+  .products .portfolio-content {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .products .portfolio-content img {
+    transition: 0.3s;
+  }
+  
+  .products .portfolio-content .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transition: all ease-in-out 0.3s;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+  }
+  .products .portfolio-content .portfolio-info img {
+    width: 500px;
+    height: 300px;
+  }
+  .products .portfolio-content .portfolio-info h4 {
+    font-size: 14px;
+    padding: 5px 10px;
+    font-weight: 400;
+    color: #ffffff;
+    display: inline-block;
+    background-color: var(--accent-color);
+  }
+  
+  .products .portfolio-content .portfolio-info p {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0 10px;
+  }
+  
+  .products .portfolio-content .portfolio-info .preview-link,
+  .products .portfolio-content .portfolio-info .details-link {
+    position: absolute;
+    left: calc(50% - 40px);
+    font-size: 26px;
+    top: calc(50% - 14px);
+    color: #fff;
+    transition: 0.3s;
+    line-height: 1.2;
+  }
+  
+  .products .portfolio-content .portfolio-info .preview-link:hover,
+  .products .portfolio-content .portfolio-info .details-link:hover {
+    color: var(--accent-color);
+  }
+  
+  .products .portfolio-content .portfolio-info .details-link {
+    left: 50%;
+    font-size: 34px;
+    line-height: 0;
+  }
+  
+  .products .portfolio-content:hover .portfolio-info {
+    opacity: 1;
+  }
+  
+  .products .portfolio-content:hover img {
+    transform: scale(1.1);
+  }
+
+  /*--------------------------------------------------------------
+# Alt Services 2 Section
+--------------------------------------------------------------*/
+.product-intro .features-image {
+    position: relative;
+    min-height: 400px;
+  }
+  
+  .product-intro .features-image img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .product-intro h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .product-intro .icon-box {
+    margin-top: 30px;
+  }
+  
+  .product-intro .icon-box i {
+    color: var(--accent-color);
+    margin-right: 15px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  
+  .product-intro .icon-box h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .product-intro .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+
+  }
+  /*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing {
+    padding: 60px 0 120px 0;
+  }
+  
+  .pricing .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .pricing .pricing-item {
+    background-color: var(--surface-color);
+    box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+    padding: 60px 40px;
+    height: 100%;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .pricing h3 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .pricing .icon {
+    margin: 30px auto 20px auto;
+    width: 70px;
+    height: 70px;
+    /* background: var(--accent-color); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    transform-style: preserve-3d;
+  }
+  .pricing .icon-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    justify-content: center;
+    gap: 15px 30px;
+  }
+  .pricing .icon img{
+    margin: 0 10px;
+  }
+  .pricing .icon i {
+    /* color: var(--background-color); */
+    font-size: 50px;
+    transition: ease-in-out 0.3s;
+    line-height: 0;
+  }
+  
+
+  
+  .pricing h4 {
+    font-size: 18px;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-family: var(--heading-font);
+    /* margin-bottom: 25px; */
+    text-align: center;
+  }
+  
+  .pricing h4 sup {
+    font-size: 28px;
+  }
+  
+  .pricing h4 span {
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  
+  .pricing ul {
+    padding: 20px 0;
+    list-style: none;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    text-align: left;
+    line-height: 20px;
+  }
+  
+  .pricing ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .pricing ul i {
+    color: #059652;
+    font-size: 24px;
+    padding-right: 3px;
+  }
+  
+  .pricing ul .na {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+  }
+  
+  .pricing ul .na i {
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
+  }
+  
+  .pricing ul .na span {
+    text-decoration: line-through;
+  }
+  
+  .pricing .buy-btn {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    display: inline-block;
+    padding: 8px 40px 10px 40px;
+    border-radius: 50px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+    transition: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    transition: 0.3s;
+  }
+  
+  .pricing .buy-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+  
+  .pricing .featured {
+    z-index: 10;
+    border: 3px solid var(--accent-color);
+  }
+  
+  @media (min-width: 992px) {
+    .pricing .featured {
+      transform: scale(1.15);
+    }
+  }
