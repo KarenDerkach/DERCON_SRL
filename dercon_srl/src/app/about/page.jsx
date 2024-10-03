@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PageTitles from "../ui/pageTitles/pageTitles";
 import "./about.css";
 
@@ -63,7 +64,13 @@ export default function About() {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              <img src="/img/alt-services.jpg" alt="" />
+              <Image
+                src="/img/alt-services.jpg"
+                alt=""
+                height={500}
+                width={500}
+                objectFit="fit"
+              />
             </div>
 
             <div
@@ -228,7 +235,13 @@ export default function About() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <img src="/img/features-3-2.jpg" alt="" />
+              <Image
+                src="/img/features-3-2.jpg"
+                alt=""
+                height={500}
+                width={500}
+                objectFit="fit"
+              />
             </div>
           </div>
         </div>

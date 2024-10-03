@@ -141,3 +141,57 @@ export const products = [
         alt: "Plasticor"
     },
 ]
+export const carouselItems = [
+    { src: "/img/hero-carousel/hero-carousel-1.jpg", alt: "Imagen 1" },
+    { src: "/img/hero-carousel/hero-carousel-2.jpg", alt: "Imagen 2" },
+    { src: "/img/hero-carousel/hero-carousel-3.jpg", alt: "Imagen 3" },
+    { src: "/img/hero-carousel/hero-carousel-4.jpg", alt: "Imagen 4" },
+    { src: "/img/hero-carousel/hero-carousel-5.jpg", alt: "Imagen 5" },
+];
+
+export const services = [
+    {
+        title: "Obras Civiles e Industriales",
+        description: "En DERCON, llevamos más de 30 años liderando proyectos de construcción civil e industrial, con un enfoque en la calidad y la satisfacción del cliente. Nuestro servicio se destaca por:",
+        points: [
+            "Experiencia comprobada: Con décadas de trayectoria, hemos ejecutado proyectos de gran envergadura en diversas industrias, garantizando resultados de alta calidad.",
+            "Cumplimiento de plazos: Entendemos la importancia de entregar proyectos en tiempo y forma, por lo que nos comprometemos con cronogramas realistas y efectivos.",
+            "Soluciones personalizadas: Adaptamos cada proyecto a las necesidades específicas del cliente, asegurando que cada obra sea única y cumpla con los requisitos técnicos y estéticos.",
+        ],
+        imgSrc: "/img/services/obras-indust.jpeg",
+        id: 1
+    },
+    {
+        title: "Movimiento de Suelos",
+        description: "Contamos con maquinaria propia para realizar trabajos de movimiento de suelos, lo que nos permite ofrecer un servicio rápido y eficiente. Esto incluye:",
+        points: [
+            "Equipos especializados: Nuestra flota de maquinaria moderna incluye excavadoras, bulldozers y retroexcavadoras que aseguran precisión en el trabajo.",
+            "Control total del proceso: Al contar con nuestros propios equipos, podemos gestionar el trabajo de manera directa, optimizando costos y tiempos.",
+            "Equipo capacitado: Nuestro personal altamente calificado asegura un manejo experto de la maquinaria, cumpliendo con los más altos estándares de calidad.",
+        ],
+        imgSrc: "/img/services/mov-suelo.jpg",
+        id: 2
+    },
+    {
+        title: "Alquiler de Equipos",
+        description: "Ofrecemos un servicio flexible y accesible de alquiler de equipos para diferentes tipos de proyectos de construcción. Nuestros beneficios incluyen:",
+        points: [
+            "Variedad de maquinaria: Ponemos a disposición una amplia gama de equipos, desde pequeños implementos hasta maquinaria pesada, para adaptarnos a cualquier necesidad.",
+            "Asesoramiento técnico: Ayudamos a nuestros clientes a elegir el equipo adecuado para cada proyecto, asegurando que obtengan el mejor rendimiento.",
+            "Disponibilidad inmediata: Gracias a nuestra gestión interna de inventario, garantizamos la disponibilidad de los equipos en el momento que los necesite.",
+        ],
+        imgSrc: "/img/services/alqu-equipos1.jpeg",
+        id: 3
+    },
+    {
+        title: "Diseño y Cálculo Estructural",
+        description: "Nuestro equipo de ingenieros especializados ofrece soluciones de diseño y cálculo estructural, asegurando que cada proyecto sea seguro, funcional y eficiente. Algunas de nuestras fortalezas son:",
+        points: [
+            "Análisis preciso: Realizamos estudios detallados para garantizar que las estructuras resistan las cargas y condiciones a las que estarán expuestas.",
+            "Optimización de recursos: Diseñamos estructuras eficientes, minimizando el uso de materiales sin comprometer la seguridad, lo que se traduce en ahorro de costos para el cliente.",
+            "Cumplimiento normativo: Nos aseguramos de que todos nuestros diseños cumplan con las normativas locales e internacionales vigentes, garantizando la legalidad del proyecto.",
+        ],
+        imgSrc: "/img/services/asesoramiento.jpg",
+        id: 4
+    },
+];

@@ -1,7 +1,50 @@
 import Image from "next/image";
-import "./mainpage.css";
 import Link from "next/link";
 import ContactForm from "../contact/contactForm";
+import { carouselItems, services } from "@/assets/data/products";
+import "./mainpage.css";
+
+const CarouselItem = ({ src, alt }) => (
+  <div
+    className={alt === "Imagen 1" ? "carousel-item active" : "carousel-item"}
+  >
+    <Image src={src} alt={alt} width={500} height={300} objectFit="cover" />
+  </div>
+);
+
+const ServiceItem = ({ title, description, points, imgSrc, id }) => {
+  return (
+    <div
+      className={id === 1 ? "tab-pane fade active show" : "tab-pane fade "}
+      id={`features-tab-${id}`}
+      role="tabpanel"
+    >
+      <div className="row">
+        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+          <h3>{title}</h3>
+          <p className="fst-italic">{description}</p>
+          <ul>
+            {points.map((point, index) => (
+              <li key={index}>
+                <i className="bi bi-check2-all"></i> <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="col-lg-6 order-1 order-lg-2 text-center">
+          <Image
+            src={imgSrc}
+            alt={title}
+            className="img-fluid"
+            height={500}
+            width={500}
+            objectFit="cover"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
@@ -34,55 +77,9 @@ export default function Home() {
           class="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-item">
-            <Image
-              src="/img/hero-carousel/hero-carousel-1..jpg"
-              alt="Descripción de la imagen"
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </div>
-
-          <div className="carousel-item active">
-            <Image
-              src="/img/hero-carousel/hero-carousel-2..jpg"
-              alt="Descripción de la imagen"
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </div>
-
-          <div className="carousel-item">
-            <Image
-              src="/img/hero-carousel/hero-carousel-3..jpg"
-              alt="Descripción de la imagen"
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </div>
-
-          <div className="carousel-item">
-            <Image
-              src="/img/hero-carousel/hero-carousel-4..jpg"
-              alt="Descripción de la imagen"
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </div>
-
-          <div className="carousel-item">
-            <Image
-              src="/img/hero-carousel/hero-carousel-5..jpg"
-              alt="Descripción de la imagen"
-              width={500}
-              height={300}
-              layout="responsive"
-            />
-          </div>
+          {carouselItems.map((item, index) => (
+            <CarouselItem key={index} src={item.src} alt={item.alt} />
+          ))}
 
           <button
             className="carousel-control-prev"
@@ -109,8 +106,6 @@ export default function Home() {
           </button>
         </div>
       </section>
-
-      {/* <!-- /Hero Section --> */}
 
       {/* <!-- About Section --> */}
       <section id="about" class="about section">
@@ -183,264 +178,38 @@ export default function Home() {
           <p>Contamos con más de 30 años ofreciendo servicios de calidad.</p>
         </div>
 
-        <div class="container">
+        <div className="container">
           <ul
-            class="nav nav-tabs row  g-2 d-flex"
+            className="nav nav-tabs row g-2 d-flex"
             data-aos="fade-up"
             data-aos-delay="100"
             role="tablist"
           >
-            <li class="nav-item col-3" role="presentation">
-              <a
-                class="nav-link active show"
-                data-bs-toggle="tab"
-                data-bs-target="#features-tab-1"
-                aria-selected="true"
-                role="tab"
-              >
-                <h4>Obras Civiles e Indutriales</h4>
-              </a>
-            </li>
-
-            <li class="nav-item col-3" role="presentation">
-              <a
-                class="nav-link"
-                data-bs-toggle="tab"
-                data-bs-target="#features-tab-2"
-                aria-selected="false"
-                tabindex="-1"
-                role="tab"
-              >
-                <h4>Movimiento de Suelos</h4>
-              </a>
-            </li>
-            <li class="nav-item col-3" role="presentation">
-              <a
-                class="nav-link"
-                data-bs-toggle="tab"
-                data-bs-target="#features-tab-3"
-                aria-selected="false"
-                tabindex="-1"
-                role="tab"
-              >
-                <h4>Alquiler de Equipos</h4>
-              </a>
-            </li>
-
-            <li class="nav-item col-3" role="presentation">
-              <a
-                class="nav-link"
-                data-bs-toggle="tab"
-                data-bs-target="#features-tab-4"
-                aria-selected="false"
-                tabindex="-1"
-                role="tab"
-              >
-                <h4>Diseño y Cálculo Estructural</h4>
-              </a>
-            </li>
+            {services.map((service, index) => (
+              <li key={index} className="nav-item col-3" role="presentation">
+                <a
+                  className={
+                    service.id === 1 ? "nav-link active show" : "nav-link"
+                  }
+                  data-bs-toggle="tab"
+                  data-bs-target={`#features-tab-${service.id}`}
+                  aria-selected={service.id === 1 ? "true" : "false"}
+                  role="tab"
+                  tabIndex={service.id !== 1 ? "-1" : null}
+                >
+                  <h4>{service.title}</h4>
+                </a>
+              </li>
+            ))}
           </ul>
 
-          <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-            <div
-              class="tab-pane fade active show"
-              id="features-tab-1"
-              role="tabpanel"
-            >
-              <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                  <h3>Voluptatem dignissimos provident</h3>
-                  <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <ul>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        trideta storacalaperda mastiro dolore eu fugiat nulla
-                        pariatur.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                  <Image
-                    src="/img/services/obras-indust.jpeg"
-                    class="img-fluid"
-                    alt=""
-                    height={500}
-                    width={500}
-                    objectFit="cover"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
-              <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                  <h3>Neque exercitationem debitis</h3>
-                  <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <ul>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Provident mollitia neque rerum asperiores dolores quos
-                        qui a. Ipsum neque dolor voluptate nisi sed.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        trideta storacalaperda mastiro dolore eu fugiat nulla
-                        pariatur.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                  <Image
-                    src="/img/services/mov-suelo.jpg"
-                    class="img-fluid"
-                    alt=""
-                    height={500}
-                    width={500}
-                    objectFit="fill"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
-              <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                  <h3>Voluptatibus commodi accusamu</h3>
-                  <ul>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Provident mollitia neque rerum asperiores dolores quos
-                        qui a. Ipsum neque dolor voluptate nisi sed.
-                      </span>
-                    </li>
-                  </ul>
-                  <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                  <Image
-                    src="/img/services/alqu-equipos1.jpeg"
-                    class="img-fluid"
-                    alt=""
-                    height={500}
-                    width={500}
-                    objectFit="fill"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
-              <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-                  <h3>Omnis fugiat ea explicabo sunt</h3>
-                  <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </p>
-                  <ul>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        velit.
-                      </span>
-                    </li>
-                    <li>
-                      <i class="bi bi-check2-all"></i>{" "}
-                      <span>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate
-                        trideta storacalaperda mastiro dolore eu fugiat nulla
-                        pariatur.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center">
-                  <Image
-                    src="/img/constructions-1.jpg"
-                    class="img-fluid"
-                    alt=""
-                    height={500}
-                    width={500}
-                    objectFit="fill"
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="tab-content" data-aos="fade-up" data-aos-delay="200">
+            {services.map((service, index) => (
+              <ServiceItem key={index} {...service} />
+            ))}
           </div>
         </div>
       </section>
-
       {/* <!-- Products Section --> */}
       <section id="products" className="products section light-background">
         <div className="container section-title" data-aos="fade-up">

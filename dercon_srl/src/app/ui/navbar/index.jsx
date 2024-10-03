@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import "./navbar.css";
 import Link from "next/link";
+import Image from "next/image";
+import "./navbar.css";
 
 export default function Navbar({ pathname }) {
   useEffect(() => {
@@ -72,7 +73,13 @@ export default function Navbar({ pathname }) {
     <header id="header" class="header d-flex align-items-center fixed-top">
       <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <Link href="/home" class="logo d-flex align-items-center">
-          <img src="/img/dercon_no_background.png" alt="logo" />
+          <Image
+            src="/img/dercon_no_background.png"
+            alt="logo"
+            height={500}
+            width={350}
+            objectFit="fit"
+          />
         </Link>
 
         <nav id="navmenu" class="navmenu">

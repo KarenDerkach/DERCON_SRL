@@ -151,25 +151,25 @@ export default function Products() {
                 <h3>Tarjeta Debito/Crédito</h3>
 
                 <div class="icon-cards">
-                  <img
+                  <Image
                     src="/img/products/visa.svg"
                     alt="Visa Logo"
                     width={120}
                     height={100}
                   />
-                  <img
+                  <Image
                     src="/img/products/mastercard.png"
                     alt="Mastercard Pago Logo"
                     width={100}
                     height={80}
                   />
-                  <img
+                  <Image
                     src="/img/products/viumi.png"
                     alt="Viumi Logo"
                     width={120}
                     height={50}
                   />
-                  <img
+                  <Image
                     src="/img/products/tarjeta-naranja.png"
                     alt="Naranja Logo"
                     width={80}
@@ -184,7 +184,7 @@ export default function Products() {
               <div class="pricing-item">
                 <h3>Mercado Pago / Transferencia Bancaria</h3>
                 <div class="icon">
-                  <img
+                  <Image
                     src="/img/products/mercado-pago.png"
                     alt="Mercado Pago Logo"
                     width={250}

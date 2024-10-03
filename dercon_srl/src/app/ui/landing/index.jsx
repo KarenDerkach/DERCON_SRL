@@ -1,7 +1,6 @@
-"use client";
 import Image from "next/image";
-import "./landing.css";
 import Link from "next/link";
+import "./landing.css";
 
 export default function Landing() {
   return (
@@ -37,10 +36,10 @@ export default function Landing() {
               {/* Botones */}
               <div className="btn-links d-flex justify-content-center gap-3">
                 <Link href="/contact" className="btn btn-primary btn-lg">
-                  Contáctanos
+                  Contactános
                 </Link>
                 <Link href="/home" className="btn btn-outline-primary">
-                  Nosotros
+                  Conocenos
                 </Link>
               </div>
 
