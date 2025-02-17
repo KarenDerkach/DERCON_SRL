@@ -24,16 +24,13 @@ export default function Navbar({ pathname }) {
     };
 
     // Añadir el evento de click al botón de navegación móvil
-    if (mobileNavToggleBtn) {
+    mobileNavToggleBtn &&
       mobileNavToggleBtn.addEventListener("click", toggleMenu);
-    }
 
     // Añadir eventos a los enlaces de navegación para cerrar el menú al hacer clic
     navLinks.forEach((navLink) => {
       navLink.addEventListener("click", () => {
-        if (body.classList.contains("mobile-nav-active")) {
-          toggleMenu();
-        }
+        body.classList.contains("mobile-nav-active") && toggleMenu();
       });
     });
 
@@ -69,28 +66,30 @@ export default function Navbar({ pathname }) {
     document.addEventListener("scroll", toggleScrolled);
     window.addEventListener("load", toggleScrolled);
   }, []);
+
+  const logo = "/img/dercon_no_background.png";
   return (
-    <header id="header" class="header d-flex align-items-center fixed-top">
-      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        <Link href="/home" class="logo d-flex align-items-center">
-          <Image
-            src="/img/dercon_no_background.png"
-            alt="logo"
-            height={500}
-            width={350}
-            objectFit="fit"
-          />
+    <header id="header" className="header d-flex align-items-center fixed-top">
+      <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <Link href="/home" className="logo d-flex align-items-center">
+          <Image src={logo} alt="logo" height={500} width={350} />
         </Link>
 
-        <nav id="navmenu" class="navmenu">
+        <nav id="navmenu" className="navmenu">
           <ul>
             <li>
-              <Link href="/home" class={pathname === "/home" && "active"}>
+              <Link
+                href="/home"
+                className={pathname === "/home" ? "active" : undefined}
+              >
                 Inicio
               </Link>
             </li>
             <li>
-              <Link href="/about" class={pathname === "/about" && "active"}>
+              <Link
+                href="/about"
+                className={pathname === "/about" ? "active" : undefined}
+              >
                 Nosotros
               </Link>
             </li>
@@ -98,18 +97,21 @@ export default function Navbar({ pathname }) {
             <li>
               <Link
                 href="/products"
-                class={pathname === "/products" && "active"}
+                className={pathname === "/products" ? "active" : undefined}
               >
                 Productos
               </Link>
             </li>
             <li>
-              <Link href="/contact" class={pathname === "/contact" && "active"}>
+              <Link
+                href="/contact"
+                className={pathname === "/contact" ? "active" : undefined}
+              >
                 Contactos
               </Link>
             </li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <i className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
       </div>
     </header>

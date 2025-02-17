@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Swiper from "swiper";
 import "swiper/swiper-bundle.css";
-import PageTitles from "../ui/pageTitles/pageTitles";
+import PageTitles from "@/assets/components/pageTitles";
 import "./productsDetails.css";
 import Image from "next/image";
 import ProductsDetails from "./ProductsDetails";
@@ -31,14 +31,14 @@ export default function Products() {
   }, []);
 
   return (
-    <main class="main">
+    <main className="main">
       <PageTitles />
       {/* <!-- Porque comprar en Dercon  --> */}
-      <section id="product-intro" class="product-intro section">
-        <div class="container">
-          <div class="row justify-content-around gy-4">
+      <section id="product-intro" className="product-intro section">
+        <div className="container">
+          <div className="row justify-content-around gy-4">
             <div
-              class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
+              className="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -53,9 +53,9 @@ export default function Products() {
                 acabado eficiente y duradero.
               </p>
 
-              <div class="row">
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div className="row">
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-patch-check flex-shrink-0"></i>
                   <div>
                     <h4>Calidad garantizada </h4>
                     <p>
@@ -66,8 +66,8 @@ export default function Products() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-truck flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-truck flex-shrink-0"></i>
                   <div>
                     <h4>Envío gratuito en áreas seleccionadas </h4>
                     <p>
@@ -80,8 +80,8 @@ export default function Products() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-person-raised-hand flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-person-raised-hand flex-shrink-0"></i>
                   <div>
                     <h4>Atención personalizada </h4>
                     <p>
@@ -91,8 +91,8 @@ export default function Products() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-clipboard2-check flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-clipboard2-check flex-shrink-0"></i>
                   <div>
                     <h4>Confiabilidad y experiencia </h4>
                     <p>
@@ -106,7 +106,7 @@ export default function Products() {
             </div>
 
             <div
-              class="features-image col-lg-5 order-1 order-lg-2"
+              className="features-image col-lg-5 order-1 order-lg-2"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -125,8 +125,8 @@ export default function Products() {
       {/* Products Details */}
       <ProductsDetails />
       {/* Payment Option */}
-      <section id="pricing" class="pricing section">
-        <div class="container section-title" data-aos="fade-up">
+      <section id="pricing" className="pricing section">
+        <div className="container section-title" data-aos="fade-up">
           <h2>Métodos de Pago</h2>
           <p>
             Porque nuestra prioridad sos vos, te facilitamos los siguientes
@@ -134,23 +134,23 @@ export default function Products() {
           </p>
         </div>
 
-        <div class="container" data-aos="zoom-in" data-aos-delay="100">
-          <div class="row g-4">
-            <div class="col-lg-4">
-              <div class="pricing-item">
+        <div className="container" data-aos="zoom-in" data-aos-delay="100">
+          <div className="row g-4">
+            <div className="col-lg-4">
+              <div className="pricing-item">
                 <h3>Efectivo</h3>
-                <div class="icon">
-                  <i class="bi bi-cash-coin"></i>
+                <div className="icon">
+                  <i className="bi bi-cash-coin"></i>
                 </div>
                 <h4>Hasta 10% de descuento en productos seleccionados!</h4>
               </div>
             </div>
 
-            <div class="col-lg-4">
-              <div class="pricing-item ">
+            <div className="col-lg-4">
+              <div className="pricing-item ">
                 <h3>Tarjeta Debito/Crédito</h3>
 
-                <div class="icon-cards">
+                <div className="icon-cards">
                   <Image
                     src="/img/products/visa.svg"
                     alt="Visa Logo"
@@ -180,10 +180,10 @@ export default function Products() {
               </div>
             </div>
 
-            <div class="col-lg-4">
-              <div class="pricing-item">
+            <div className="col-lg-4">
+              <div className="pricing-item">
                 <h3>Mercado Pago / Transferencia Bancaria</h3>
-                <div class="icon">
+                <div className="icon">
                   <Image
                     src="/img/products/mercado-pago.png"
                     alt="Mercado Pago Logo"

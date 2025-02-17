@@ -32,13 +32,14 @@
     font-size: 56px;
     font-weight: 700;
     position: relative;
+    max-width: 50rem;
   }
   
   .hero .info h2:after {
     content: "";
     position: absolute;
     display: block;
-    width: 80px;
+    width: 260px;
     height: 4px;
     background: var(--accent-color);
     left: 0;
@@ -432,6 +433,24 @@
 }
 .products .btn{
   margin: 20px;
+}
+/* Diseño en Desktop: las imágenes se muestran en una fila horizontal */
+@media (min-width: 1200px) {
+  .products-item {
+    flex: 0 0 24%; /* 4 elementos por línea */
+  }
+}
+
+/* Diseño en Mobile: las imágenes se muestran en dos columnas por línea */
+@media (max-width: 1199px) {
+  .products-item {
+    flex: 0 0 48%; /* 2 elementos por línea */
+  }
+}
+
+/* Diseño en Pantallas pequeñas (mobile-first) */
+.products-item {
+  margin-bottom: 1rem; /* Espaciado entre las imágenes */
 }
 @media (max-width: 575px) {
   .products .col-6 {

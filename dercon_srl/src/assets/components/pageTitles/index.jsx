@@ -14,21 +14,21 @@ function PageTitles() {
 
   return (
     <div
-      class="page-title dark-background"
+      className="page-title dark-background"
       style={{ backgroundImage: `url(/img/page-title-bg.jpg)` }}
     >
-      <div class="container position-relative">
+      <div className="container position-relative">
         <h1>
           {Object.keys(reference).includes(pathname)
             ? reference[pathname]
             : null}
         </h1>
-        <nav class="breadcrumbs">
+        <nav className="breadcrumbs">
           <ol>
             <li>
               <Link href="/home">Inicio</Link>
             </li>
-            <li class="current">
+            <li className="current">
               {Object.keys(reference).includes(pathname)
                 ? reference[pathname]
                 : null}

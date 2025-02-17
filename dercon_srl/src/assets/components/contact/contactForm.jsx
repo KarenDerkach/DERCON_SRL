@@ -12,17 +12,28 @@ const ContactForm = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const validateEmail = (email) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(false);
+    setError("");
+
+    if (!validateEmail(formData.email)) {
+      setError("Por favor, ingrese un email válido.");
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch("/api/sendEmail", {
@@ -37,11 +48,11 @@ const ContactForm = () => {
         setSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setError(true);
+        setError("Error al enviar el mensaje. Inténtelo nuevamente.");
       }
     } catch (error) {
       console.error("Error al enviar el correo:", error);
-      setError(true);
+      setError("No se pudo enviar el mensaje. Intente más tarde.");
     } finally {
       setLoading(false);
     }
@@ -49,12 +60,7 @@ const ContactForm = () => {
 
   return (
     <div className="col-lg-6">
-      <form
-        onSubmit={handleSubmit}
-        className="emailForm"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
+      <form onSubmit={handleSubmit} className="emailForm">
         <div className="row gy-4">
           <div className="col-md-6">
             <input
@@ -105,16 +111,11 @@ const ContactForm = () => {
           </div>
 
           <div className="col-md-12 text-center">
-            {loading && <div className="loading">Cargando ...</div>}
-            {error && (
-              <div className="error-message">
-                Ha ocurrido un error al enviar el mensaje, intentelo de nuevo
-                por favor.
-              </div>
-            )}
+            {loading && <div className="loading">Cargando...</div>}
+            {error && <div className="error-message">{error}</div>}
             {submitted && (
               <div className="sent-message">
-                Su mensaje a sido enviado! Muchas gracias!
+                Su mensaje ha sido enviado. ¡Gracias!
               </div>
             )}
 

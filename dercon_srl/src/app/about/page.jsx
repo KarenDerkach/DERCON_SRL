@@ -1,51 +1,51 @@
 import Image from "next/image";
-import PageTitles from "../ui/pageTitles/pageTitles";
+import PageTitles from "@/assets/components/pageTitles";
 import "./about.css";
 
 export default function About() {
   return (
-    <main class="main">
+    <main className="main">
       <PageTitles />
 
       {/* <!-- Stats Counter Section --> */}
-      <section id="stats-counter" class="stats-counter section">
-        <div class="container section-title" data-aos="fade-up">
+      <section id="stats-counter" className="stats-counter section">
+        <div className="container section-title" data-aos="fade-up">
           <h2>Valores</h2>
           <p>Principios que nos definen.</p>
         </div>
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item d-flex align-items-center w-100 h-100">
-                <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+        <div className="container" data-aos="fade-up" data-aos-delay="100">
+          <div className="row gy-4">
+            <div className="col-lg-3 col-md-6">
+              <div className="stats-item d-flex align-items-center w-100 h-100">
+                <i className="bi bi-emoji-smile color-blue flex-shrink-0"></i>
                 <div>
                   <p>Clientes Satisfechos</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item d-flex align-items-center w-100 h-100">
-                <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+            <div className="col-lg-3 col-md-6">
+              <div className="stats-item d-flex align-items-center w-100 h-100">
+                <i className="bi bi-journal-richtext color-orange flex-shrink-0"></i>
                 <div>
                   <p>Obras de Calidad</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item d-flex align-items-center w-100 h-100">
-                <i class="bi bi-headset color-green flex-shrink-0"></i>
+            <div className="col-lg-3 col-md-6">
+              <div className="stats-item d-flex align-items-center w-100 h-100">
+                <i className="bi bi-headset color-green flex-shrink-0"></i>
                 <div>
                   <p>Comunicación Clara y Precisa</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="stats-item d-flex align-items-center w-100 h-100">
-                <i class="bi bi-people color-pink flex-shrink-0"></i>
+            <div className="col-lg-3 col-md-6">
+              <div className="stats-item d-flex align-items-center w-100 h-100">
+                <i className="bi bi-people color-pink flex-shrink-0"></i>
                 <div>
                   <p>Responsabilidad y Transparencia</p>
                 </div>
@@ -56,11 +56,11 @@ export default function About() {
       </section>
 
       {/* <!-- Alt Services Section --> */}
-      <section id="alt-services" class="alt-services section">
-        <div class="container">
-          <div class="row justify-content-around gy-4">
+      <section id="alt-services" className="alt-services section">
+        <div className="container">
+          <div className="row justify-content-around gy-4">
             <div
-              class="features-image col-lg-6"
+              className="features-image col-lg-6"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -69,12 +69,11 @@ export default function About() {
                 alt=""
                 height={500}
                 width={500}
-                objectFit="fit"
               />
             </div>
 
             <div
-              class="col-lg-5 d-flex flex-column justify-content-center"
+              className="col-lg-5 d-flex flex-column justify-content-center"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -91,13 +90,13 @@ export default function About() {
               </p>
 
               <div
-                class="icon-box d-flex position-relative"
+                className="icon-box d-flex position-relative"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                <i class="bi bi-patch-check flex-shrink-0"></i>
+                <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
-                  <h4 class="stretched-link">
+                  <h4 className="stretched-link">
                     Cumplimiento de plazos y calidad:
                   </h4>
                   <p>
@@ -109,13 +108,13 @@ export default function About() {
               </div>
 
               <div
-                class="icon-box d-flex position-relative"
+                className="icon-box d-flex position-relative"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
-                <i class="bi bi-patch-check flex-shrink-0"></i>
+                <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
-                  <h4 class="stretched-link">
+                  <h4 className="stretched-link">
                     Innovación en soluciones constructivas:
                   </h4>
                   <p>
@@ -127,13 +126,13 @@ export default function About() {
               </div>
 
               <div
-                class="icon-box d-flex position-relative"
+                className="icon-box d-flex position-relative"
                 data-aos="fade-up"
                 data-aos-delay="500"
               >
-                <i class="bi bi-patch-check flex-shrink-0"></i>
+                <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
-                  <h4 class="stretched-link">
+                  <h4 className="stretched-link">
                     Relaciones de confianza con clientes y proveedores
                   </h4>
                   <p>
@@ -145,13 +144,13 @@ export default function About() {
               </div>
 
               <div
-                class="icon-box d-flex position-relative"
+                className="icon-box d-flex position-relative"
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                <i class="bi bi-patch-check flex-shrink-0"></i>
+                <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
-                  <h4 class="stretched-link">
+                  <h4 className="stretched-link">
                     Optimización de costos y recursos:
                   </h4>
                   <p>
@@ -167,19 +166,19 @@ export default function About() {
       </section>
 
       {/* <!-- /Alt Services Section --> */}
-      <section id="alt-services-2" class="alt-services-2 section">
-        <div class="container">
-          <div class="row justify-content-around gy-4">
+      <section id="alt-services-2" className="alt-services-2 section">
+        <div className="container">
+          <div className="row justify-content-around gy-4">
             <div
-              class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
+              className="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <h3>Vision</h3>
 
-              <div class="row">
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-easel flex-shrink-0"></i>
+              <div className="row">
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-easel flex-shrink-0"></i>
                   <div>
                     <h4>Liderar el mercado regional</h4>
                     <p>
@@ -190,8 +189,8 @@ export default function About() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-easel flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-easel flex-shrink-0"></i>
                   <div>
                     <h4>Expansión sostenible</h4>
                     <p>
@@ -203,8 +202,8 @@ export default function About() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-easel flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-easel flex-shrink-0"></i>
                   <div>
                     <h4>Desarrollar alianzas estratégicas</h4>
                     <p>
@@ -215,8 +214,8 @@ export default function About() {
                   </div>
                 </div>
 
-                <div class="col-lg-6 icon-box d-flex">
-                  <i class="bi bi-easel flex-shrink-0"></i>
+                <div className="col-lg-6 icon-box d-flex">
+                  <i className="bi bi-easel flex-shrink-0"></i>
                   <div>
                     <h4>Promover prácticas sostenibles</h4>
                     <p>
@@ -231,7 +230,7 @@ export default function About() {
             </div>
 
             <div
-              class="features-image col-lg-5 order-1 order-lg-2"
+              className="features-image col-lg-5 order-1 order-lg-2"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -240,7 +239,6 @@ export default function About() {
                 alt=""
                 height={500}
                 width={500}
-                objectFit="fit"
               />
             </div>
           </div>
