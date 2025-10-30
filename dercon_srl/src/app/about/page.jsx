@@ -1,20 +1,20 @@
 import Image from "next/image";
-import PageTitles from "@/assets/components/pageTitles";
+import PageTitles from "@/components/pageTitles";
 import "./about.css";
 
 export default function About() {
   return (
-    <main className="main">
+    <>
       <PageTitles />
 
       {/* <!-- Stats Counter Section --> */}
       <section id="stats-counter" className="stats-counter section">
-        <div className="container section-title" data-aos="fade-up">
+        <div className="container section-title">
           <h2>Valores</h2>
           <p>Principios que nos definen.</p>
         </div>
 
-        <div className="container" data-aos="fade-up" data-aos-delay="100">
+        <div className="container">
           <div className="row gy-4">
             <div className="col-lg-3 col-md-6">
               <div className="stats-item d-flex align-items-center w-100 h-100">
@@ -59,11 +59,7 @@ export default function About() {
       <section id="alt-services" className="alt-services section">
         <div className="container">
           <div className="row justify-content-around gy-4">
-            <div
-              className="features-image col-lg-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div className="features-image col-lg-6">
               <Image
                 src="/img/alt-services.jpg"
                 alt=""
@@ -72,11 +68,7 @@ export default function About() {
               />
             </div>
 
-            <div
-              className="col-lg-5 d-flex flex-column justify-content-center"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="col-lg-5 d-flex flex-column justify-content-center">
               <h3>Nuestra Mision</h3>
               <p>
                 A lo largo de los años, en DERCON SRL hemos consolidado nuestro
@@ -89,11 +81,7 @@ export default function About() {
                 Nuestro compromiso se basa en:
               </p>
 
-              <div
-                className="icon-box d-flex position-relative"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
+              <div className="icon-box d-flex position-relative">
                 <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
                   <h4 className="stretched-link">
@@ -107,11 +95,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div
-                className="icon-box d-flex position-relative"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
+              <div className="icon-box d-flex position-relative">
                 <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
                   <h4 className="stretched-link">
@@ -125,11 +109,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div
-                className="icon-box d-flex position-relative"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
+              <div className="icon-box d-flex position-relative">
                 <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
                   <h4 className="stretched-link">
@@ -143,11 +123,7 @@ export default function About() {
                 </div>
               </div>
 
-              <div
-                className="icon-box d-flex position-relative"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
+              <div className="icon-box d-flex position-relative">
                 <i className="bi bi-patch-check flex-shrink-0"></i>
                 <div>
                   <h4 className="stretched-link">
@@ -169,11 +145,7 @@ export default function About() {
       <section id="alt-services-2" className="alt-services-2 section">
         <div className="container">
           <div className="row justify-content-around gy-4">
-            <div
-              className="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
+            <div className="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1">
               <h3>Vision</h3>
 
               <div className="row">
@@ -229,11 +201,7 @@ export default function About() {
               </div>
             </div>
 
-            <div
-              className="features-image col-lg-5 order-1 order-lg-2"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
+            <div className="features-image col-lg-5 order-1 order-lg-2">
               <Image
                 src="/img/features-3-2.jpg"
                 alt=""
@@ -244,6 +212,6 @@ export default function About() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

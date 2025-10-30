@@ -1,7 +1,9 @@
 import { Montserrat } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import "./globals.css";
-import LayoutWrapper from "@/assets/components/clientScripts/index";
+import LayoutWrapper from "@/components/mainLayout/index";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -19,17 +21,8 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <link href="/img/favicon.png" rel="icon" />
         <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-        />
       </head>
+
       <body className={`${inter.className} antialiased`}>
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>

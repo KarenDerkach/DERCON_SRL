@@ -42,8 +42,11 @@
   --heading-color: #3c3c3c;
   --nav-color: #3c3c3c;
   --nav-hover-color: #3c3c3c;
+  --nav-mobile-background-color: #3c3c3c;
 }
-
+.scrolled .nav-toggle-btn i {
+  color: var(--nav-mobile-background-color);
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -124,18 +127,52 @@
       color: var(--nav-hover-color);
     }
   
+    .nav-toggle {
+  display: none;
+}
+
+/* Estilos para la etiqueta del toggle */
+.nav-toggle-label {
+  display: none;
+  color: var(--nav-color);
+  font-size: 28px;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 9999;
+  transition: color 0.3s;
+}
+
+.nav-toggle-label i {
+  transition: all 0.3s ease;
+}
   
   }
   
-  /* Mobile Navigation */
   @media (max-width: 1199px) {
-    .mobile-nav-toggle {
-      color: var(--nav-color);
-      font-size: 28px;
-      line-height: 0;
-      margin-right: 10px;
+    .nav-toggle-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      margin-left: auto;
       cursor: pointer;
-      transition: color 0.3s;
+      position: relative;
+      z-index: 9999;
+    }
+
+    .nav-toggle-btn i {
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 0;
+      transition: all 0.3s;
+    }
+
+    .menu-active .nav-toggle-btn i {
+      color: var(--nav-dropdown-color)
+    }
+
+    .menu-active .nav-toggle-btn i:before {
+      content: "\f659";
+   
     }
   
     .navmenu {
@@ -143,20 +180,27 @@
       z-index: 9997;
     }
   
+    .navmenu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      padding-top: 80px;
+      transition: 0.3s ease-in-out;
+      z-index: 998;
+    }
+
+    .menu-active .navmenu {
+      right: 0;
+    }
+
     .navmenu ul {
-      display: none;
       list-style: none;
-      position: absolute;
-      inset: 60px 20px 20px 20px;
-      padding: 10px 0;
+      padding: 80px 20px 20px;
       margin: 0;
-      border-radius: 6px;
-      background-color: var(--nav-mobile-background-color);
-      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-      box-shadow: none;
-      overflow-y: auto;
-      transition: 0.3s;
-      z-index: 9998;
+      text-align: center;
     }
   
     .navmenu a,
@@ -186,12 +230,12 @@
       justify-content: center;
       border-radius: 50%;
       transition: 0.3s;
-      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+      background-color: red;
     }
   
     .navmenu a i:hover,
     .navmenu a:focus i:hover {
-      background-color: var(--accent-color);
+      background-color:red;
       color: var(--contrast-color);
     }
   
@@ -203,7 +247,7 @@
   
     .navmenu .active i,
     .navmenu .active:focus i {
-      background-color: var(--accent-color);
+      background-color: red;
       color: var(--contrast-color);
       transform: rotate(180deg);
     }
@@ -215,7 +259,7 @@
     }
   
     .mobile-nav-active .mobile-nav-toggle {
-      color: #fff;
+       color: red;
       position: absolute;
       font-size: 32px;
       top: 15px;

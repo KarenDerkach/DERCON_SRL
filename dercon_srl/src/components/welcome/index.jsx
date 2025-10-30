@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./landing.css";
 
-export default function Landing() {
+export default function WelcomePage() {
   const LogoDesk = "/img/home/logo_1.png";
   const LogoMobile = "/img/home/logo_2.png";
 
