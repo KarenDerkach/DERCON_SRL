@@ -49,7 +49,7 @@ export default function TabListServices({ services }) {
                       eventKey={`tab-${service.id}`}
                       className="p-3 w-100"
                     >
-                      <h3 className="fs-5">{service.title}</h3>
+                      <h3 className="fs-5 fs-sm-3 service-tab-title">{service.title}</h3>
                     </Nav.Link>
                   </Nav.Item>
                 ))}

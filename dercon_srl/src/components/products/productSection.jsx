@@ -63,12 +63,12 @@ export default function ProductSection() {
           </ul>
         </article>
 
-        <a
+        {/* <a
           href="/products"
           className="btn btn-outline-secondary col-6 mx-auto mt-4"
         >
           Ver todos los productos
-        </a>
+        </a> */}
       </div>
     </div>
   );

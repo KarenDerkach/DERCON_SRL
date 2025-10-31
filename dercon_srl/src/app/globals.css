@@ -183,6 +183,7 @@ h2{
   width: 40px;
   height: 40px;
   border-radius: 4px;
+  border-color: transparent;
   transition: all 0.4s;
 }
 
@@ -490,5 +491,49 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+}
+
+/*--------------------------------------------------------------
+# Mobile Responsive Adjustments
+--------------------------------------------------------------*/
+/* Service tabs title size for mobile */
+@media (max-width: 570px) {
+  .service-tab-title {
+    font-size: 1rem !important;
+  }
+}
+
+/* Animation performance improvements for mobile */
+@media (max-width: 768px) {
+  /* Reduce animation intensity on mobile for better performance */
+  .stats-item {
+    transform: scale(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .stats-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Ensure contact info items have proper spacing on mobile */
+  .info-item {
+    margin-bottom: 2rem;
+  }
+  
+  /* Improve icon visibility on mobile */
+  .info-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Better spacing for icon boxes on mobile */
+  .icon-box {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Responsive image containers */
+  .features-image {
+    margin-bottom: 2rem;
+  }
 }
 
