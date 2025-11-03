@@ -1,15 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode: true,
+
+
+    // Optimizar imágenes
     images: {
-        formats: ['image/avif', 'image/webp'],
-        remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: '**',
-            },
-        ],
+        formats: ['image/webp', 'image/avif'],
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     },
-    reactStrictMode: true
+
+    // Compilar paquetes externos
+    transpilePackages: ['react-bootstrap'],
+
 };
 
 export default nextConfig;

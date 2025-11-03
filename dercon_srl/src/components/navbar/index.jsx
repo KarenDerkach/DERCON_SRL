@@ -1,53 +1,83 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./navbar.css";
 
 export default function Navbar({ pathname }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
+  // Manejar scroll
   useEffect(() => {
-    function handleScroll() {
-      const selectBody = document.querySelector("body");
-      const selectHeader = document.querySelector("#header");
-      if (!selectHeader) return;
-
-      if (window.scrollY > 100) {
-        selectBody.classList.add("scrolled");
-      } else {
-        selectBody.classList.remove("scrolled");
-      }
-    }
-
-    // Cierra el menú cuando se hace clic en un enlace
-    function handleLinkClick() {
-      document.body.classList.remove("menu-active");
-    }
-
-    // Event listeners
-    document.addEventListener("scroll", handleScroll);
-    const navLinks = document.querySelectorAll("#navmenu a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", handleLinkClick);
-    });
-
-    // Cleanup
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-      navLinks.forEach((link) => {
-        link.removeEventListener("click", handleLinkClick);
-      });
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Cerrar menú al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Cerrar menú al cambiar de ruta
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  // Prevenir scroll cuando el menú está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const logo = "/img/dercon_no_background.png";
+
   return (
-    <header id="header" className="header d-flex align-items-center fixed-top">
+    <header
+      id="header"
+      className={`header d-flex align-items-center fixed-top ${
+        isScrolled ? "scrolled" : ""
+      }`}
+      ref={navRef}
+    >
       <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
         <Link href="/home" className="logo d-flex align-items-center">
           <Image
             src={logo}
-            alt="logo"
+            alt="DERCON SRL Logo"
             priority={true}
             height={500}
             width={350}
@@ -55,21 +85,24 @@ export default function Navbar({ pathname }) {
         </Link>
 
         <button
-          className="nav-toggle-btn d-xl-none"
-          onClick={() => {
-            document.body.classList.toggle("menu-active");
-          }}
+          className={`nav-toggle-btn d-xl-none ${isMenuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
           aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
         >
-          <i className="bi bi-list"></i>
+          <i className={`bi ${isMenuOpen ? "bi-x" : "bi-list"}`}></i>
         </button>
 
-        <nav id="navmenu" className="navmenu">
+        <nav
+          id="navmenu"
+          className={`navmenu ${isMenuOpen ? "menu-active" : ""}`}
+        >
           <ul>
             <li>
               <Link
                 href="/home"
-                className={pathname === "/home" ? "active" : undefined}
+                className={pathname === "/home" ? "active" : ""}
+                onClick={closeMenu}
               >
                 Inicio
               </Link>
@@ -77,23 +110,17 @@ export default function Navbar({ pathname }) {
             <li>
               <Link
                 href="/about"
-                className={pathname === "/about" ? "active" : undefined}
+                className={pathname === "/about" ? "active" : ""}
+                onClick={closeMenu}
               >
                 Nosotros
               </Link>
             </li>
-            {/* <li>
-              <Link
-                href="/products"
-                className={pathname === "/products" ? "active" : undefined}
-              >
-                Productos
-              </Link>
-            </li> */}
             <li>
               <Link
                 href="/contact"
-                className={pathname === "/contact" ? "active" : undefined}
+                className={pathname === "/contact" ? "active" : ""}
+                onClick={closeMenu}
               >
                 Contactos
               </Link>

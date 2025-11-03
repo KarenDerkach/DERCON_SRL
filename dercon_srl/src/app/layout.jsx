@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import "./globals.css";
 import LayoutWrapper from "@/components/mainLayout/index";
+import WhatsAppFloating from "@/components/whatsapp/WhatsAppFloating";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -18,13 +19,13 @@ export default function RootLayout({ children }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{metadata.title}</title>
         <link href="/img/favicon.png" rel="icon" />
         <link href="/img/apple-touch-icon.png" rel="apple-touch-icon" />
       </head>
 
       <body className={`${inter.className} antialiased`}>
         <LayoutWrapper>{children}</LayoutWrapper>
+        <WhatsAppFloating />
       </body>
     </html>
   );

@@ -31,8 +31,6 @@ export default function CarouselItems({ items }) {
       interval={5000}
       controls={true}
       className="carousel slide carousel-fade"
-      data-aos="fade-up"
-      data-aos-delay="100"
     >
       {items.map((item, index) => (
         <Carousel.Item key={index}>

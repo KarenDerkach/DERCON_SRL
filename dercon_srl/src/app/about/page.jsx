@@ -8,7 +8,6 @@ export default function About() {
     <>
       <PageTitles />
 
-      {/* Stats Counter Section */}
       <ScrollAnimation animation="fadeInUp" duration={0.6} delay={0.2}>
         <section id="stats-counter" className="stats-counter section">
           <div className="container section-title">
@@ -76,8 +75,8 @@ export default function About() {
               <div className="features-image col-lg-6">
                 <ScrollAnimation animation="fadeInLeft" duration={0.8} delay={0.2}>
                   <Image
-                    src="/img/alt-services.jpg"
-                    alt=""
+                    src="/img/about-1.jpg"
+                    alt="Hombres trabajando"
                     height={500}
                     width={500}
                   />
@@ -168,7 +167,7 @@ export default function About() {
         </section>
       </ScrollAnimation>
 
-      {/* Alt Services Section - Visión */}
+      {/* Visión */}
       <ScrollAnimation animation="fadeInUp" duration={0.6} delay={0.1}>
         <section id="alt-services-2" className="alt-services-2 section">
           <div className="container">
@@ -242,8 +241,8 @@ export default function About() {
               <div className="features-image col-lg-5 order-1 order-lg-2">
                 <ScrollAnimation animation="fadeInRight" duration={0.8} delay={0.3}>
                   <Image
-                    src="/img/features-3-2.jpg"
-                    alt=""
+                    src="/img/about-2.jpg"
+                    alt="Maquinas en obra"
                     height={500}
                     width={500}
                   />

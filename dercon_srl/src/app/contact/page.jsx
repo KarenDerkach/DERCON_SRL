@@ -15,7 +15,7 @@ export default function Page() {
       {/* Contact Section */}
       <ScrollAnimation animation="fadeInUp" duration={0.6} delay={0.2}>
         <section id="contact" className="contact section">
-          <div className="container" data-aos="fade-up" data-aos-delay="100">
+          <div className="container">
             <div className="row gy-4">
               <div className="col-lg-6">
                 <ScrollAnimation

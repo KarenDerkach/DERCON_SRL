@@ -30,11 +30,14 @@ export default function Footer() {
           <div className="col-lg footer-links">
             <h4>Horas de Atención</h4>
             <p>
-              <strong>Lun-Sab:</strong> <span>7:30AM - 11:30AM</span>
+              <strong>Lun-Vier:</strong> <span> 7:30AM - 11:30AM</span>
+              </p>
+              <p><strong>Sab:</strong><span> 8:00AM - 11:30AM</span>
             </p>
             <hr />
             <p>
-              <strong>Lun-Sab:</strong> <span>2:00PM - 6:00PM</span>
+              <strong>Lun-Vier:</strong> <span> 2:00PM - 6:00PM</span></p>
+              <p><strong>Sab:</strong><span> cerrado</span>
             </p>
             <hr />
             <p>

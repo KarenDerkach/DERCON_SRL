@@ -18,8 +18,7 @@ export default function HomePage() {
           <div className="row d-flex justify-content-center">
             <div
               className="col-lg-12 info "
-              data-aos="zoom-in"
-              data-aos-delay="100"
+             
             >
               <h2>Compromiso asumido, compromiso cumplido.</h2>
             </div>
@@ -39,8 +38,6 @@ export default function HomePage() {
               >
                 <div
                   className="col-lg-7 about-img d-none d-sm-block"
-                  data-aos="zoom-out"
-                  data-aos-delay="200"
                 >
                   <Image
                     src="/img/main.jpg"
@@ -60,8 +57,7 @@ export default function HomePage() {
               >
                 <div
                   className="col-lg-6"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
+                
                 >
                   <h2 className="mt-3 fs-1 fw-bold">Quienes Somos</h2>
                   <div className="our-story">

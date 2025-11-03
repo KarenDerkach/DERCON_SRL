@@ -56,8 +56,7 @@
 //           <div className="row justify-content-around gy-4">
 //             <div
 //               className="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1"
-//               data-aos="fade-up"
-//               data-aos-delay="100"
+
 //             >
 //               <h3>¿Por qué elegirnos?</h3>
 //               <p>
@@ -124,8 +123,7 @@
 
 //             <div
 //               className="features-image col-lg-5 order-1 order-lg-2"
-//               data-aos="fade-up"
-//               data-aos-delay="200"
+
 //             >
 //               <Image
 //                 alt="Descripción de la imagen"
@@ -143,7 +141,7 @@
 //       {isClient && <FilterTabProducts />}
 //       {/* Payment Option */}
 //       <section id="pricing" className="pricing section">
-//         <div className="container section-title" data-aos="fade-up">
+//         <div className="container section-title" >
 //           <h2>Métodos de Pago</h2>
 //           <p>
 //             Porque nuestra prioridad sos vos, te facilitamos los siguientes
@@ -151,7 +149,7 @@
 //           </p>
 //         </div>
 
-//         <div className="container" data-aos="zoom-in" data-aos-delay="100">
+//         <div className="container">
 //           <div className="row g-4">
 //             <div className="col-lg-4">
 //               <div className="pricing-item">
